@@ -1,0 +1,35 @@
+@page
+@model MeuPortfolio.Pages.ContatoModel
+@{
+    ViewData["Title"] = "Contato";
+}
+
+<div class="container">
+    <h1>Contato</h1>
+    <p>Se você quiser entrar em contato comigo, preencha o formulário abaixo ou use um dos meios de contato listados.</p>
+
+    <form method="post">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nome" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="mensagem" class="form-label">Mensagem</label>
+            <textarea class="form-control" id="mensagem" name="mensagem" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+
+    <hr />
+
+    <h2>Outros Meios de Contato</h2>
+    <ul>
+        <li>E-mail: <a href="mailto:jamersom.silva@outlook.com">jamersom.silva@outlook.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/jamersom-silva/" target="_blank">Meu LinkedIn</a></li>
+        <li>GitHub: <a href="https://github.com/Jamersom-silva" target="_blank">Meu GitHub</a></li>
+    </ul>
+</div>
