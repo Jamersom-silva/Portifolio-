@@ -3,13 +3,33 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4CAF50">
     <title>@ViewData["Title"] - Meu Portfólio</title>
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="~/css/site.css" />
+    
+    <!-- CSS para animações -->
+    <style>
+        .tech-item {
+            will-change: opacity, transform;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .no-js .tech-item {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -25,10 +45,10 @@
                         <a class="nav-link" asp-page="/Index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-page="/Sobre">Sobre</a>
+                        <a class="nav-link" asp-page="/Projetos">Projetos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-page="/Projetos">Projetos</a>
+                        <a class="nav-link" asp-page="/Sobre">Sobre</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-page="/Contato">Contato</a>
@@ -46,7 +66,7 @@
     <!-- Rodapé -->
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
-            <p>&copy; 2023 - Meu Portfólio. Todos os direitos reservados.</p>
+            <p>&copy; @DateTime.Now.Year - Meu Portfólio. Todos os direitos reservados.</p>
             <p>
                 <a href="/Privacy" class="text-white">Política de Privacidade</a> | 
                 <a href="/Contato" class="text-white">Contato</a>
@@ -56,8 +76,35 @@
 
     <!-- Bootstrap JS e Dependências -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <!-- Scripts personalizados -->
     <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    <!-- Script de Animações -->
+    <script>
+        // Detecção de JS para fallback
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+        
+        // Efeito de carregamento progressivo
+        document.addEventListener('DOMContentLoaded', () => {
+            const techItems = document.querySelectorAll('.tech-item');
+            
+            // Configuração inicial
+            techItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+            });
+            
+            // Disparar animações
+            techItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

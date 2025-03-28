@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Users\\jamer\\MeuPortfolio\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\MeuPortfolio.bundle.scp.css",
-      "PackagePath": "staticwebassets\\MeuPortfolio.w04vreaxpm.bundle.scp.css"
+      "PackagePath": "staticwebassets\\MeuPortfolio.gvphnveyl7.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\css\\site.css",
@@ -11,6 +11,102 @@
     {
       "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\img.jpg",
+      "PackagePath": "staticwebassets\\images\\img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\main.jpg",
+      "PackagePath": "staticwebassets\\images\\main.jpg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\profile.jpg.svg",
+      "PackagePath": "staticwebassets\\images\\profile.jpg.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\amazonwebservices-original-wordmark.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\amazonwebservices-original-wordmark.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\azure-original-wordmark.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\azure-original-wordmark.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\azuresqldatabase-original.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\azuresqldatabase-original.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\csharp-plain.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\csharp-plain.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\css3-original-wordmark.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\css3-original-wordmark.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\django-plain.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\django-plain.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\docker-original-wordmark.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\docker-original-wordmark.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\dotnetcore-original.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\dotnetcore-original.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\express-original.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\express-original.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\git-original-wordmark.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\git-original-wordmark.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\github-original.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\github-original.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\html5-original-wordmark.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\html5-original-wordmark.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\javascript-original.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\javascript-original.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\linkedin-original.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\linkedin-original.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\mongodb-original-wordmark.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\mongodb-original-wordmark.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\nodejs-original-wordmark.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\nodejs-original-wordmark.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\outlook-original.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\outlook-original.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\postgresql-original-wordmark.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\postgresql-original-wordmark.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\python-original.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\python-original.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\vuejs-original-wordmark.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\vuejs-original-wordmark.svg"
+    },
+    {
+      "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\images\\tech-icons\\whatsapp-original.svg",
+      "PackagePath": "staticwebassets\\images\\tech-icons\\whatsapp-original.svg"
     },
     {
       "Id": "C:\\Users\\jamer\\MeuPortfolio\\wwwroot\\js\\site.js",

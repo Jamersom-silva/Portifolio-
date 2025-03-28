@@ -1,35 +1,104 @@
-/* Estilos Globais */
+/* ===== Estilos Base ===== */
+:root {
+  --cor-primaria: #fcfcfc;          /* Cor verde principal */
+  --cor-secundaria: #f7f7f7;        /* Verde mais escuro */
+  --fundo-escuro: #121212;          /* Cor de fundo escura */
+  --fundo-claro: #f8f9fa;           /* Cor de fundo clara */
+  --texto-claro: #ffffff;           /* Texto branco */
+  --texto-escuro: #212529;          /* Texto escuro */
+  --sobreposicao-escura: rgba(0, 0, 0, 0.7);  /* Overlay escuro */
+  --sobreposicao-clara: rgba(255, 255, 255, 0.85); /* Overlay claro */
+  --transicao: all 0.3s ease;       /* Transição suave */
+}
+
+/* Rolagem suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos gerais do corpo */
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
+  font-family: 'Roboto', 'Open Sans', sans-serif;
+  color: var(--texto-escuro);
+  background-color: var(--fundo-claro);
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-top: 56px; /* Espaço para navbar fixa */
 }
 
+/* ===== Tipografia ===== */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans', sans-serif;
   font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
-/* Navbar */
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--cor-primaria);
+  position: relative;
+  display: inline-block;
+}
+
+/* Sublinhado decorativo */
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--cor-primaria);
+}
+
+/* Estilos de links */
+a {
+  text-decoration: none;
+  color: var(--cor-primaria);
+  transition: var(--transicao);
+}
+
+a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* ===== Componentes de Layout ===== */
+.container {
+  max-width: 1200px;
+  padding: 0 15px;
+}
+
+/* Espaçamento de seções */
+section {
+  padding: 80px 0;
+}
+
+/* ===== Barra de Navegação ===== */
 .navbar {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {
-  font-size: 1.5rem;
   font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .nav-link {
-  font-size: 1.1rem;
-  margin-left: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
 }
 
-/* Hero Section */
+/* ===== Seção Hero (Destaque) ===== */
 .hero {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-  color: white;
-  padding: 100px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: var(--texto-claro);
+  padding: 150px 0;
   text-align: center;
 }
 
@@ -40,54 +109,280 @@ h1, h2, h3, h4, h5, h6 {
 
 .hero p {
   font-size: 1.25rem;
-  margin-bottom: 40px;
+  max-width: 700px;
+  margin: 0 auto 30px;
 }
 
-.hero .btn {
-  font-size: 1.1rem;
-  padding: 10px 30px;
+/* ===== Seção de Tecnologias ===== */
+.tech-section {
+  background-color: var(--fundo-claro);
+  padding: 80px 0;
 }
 
-/* Cards de Projetos */
-.card {
-  transition: transform 0.3s, box-shadow 0.3s;
+/* Grid de tecnologias */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Categoria de tecnologia */
+.tech-category {
+  background: var(--texto-claro);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transicao);
+}
+
+.tech-category:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Título da categoria */
+.category-title {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+  color: var(--fundo-escuro);
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--cor-primaria);
+}
+
+/* Container de ícones */
+.tech-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Ícones individuais */
+.tech-item {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--fundo-claro);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: var(--transicao);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.tech-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: var(--transicao);
+}
+
+/* Efeitos hover */
+.tech-item:hover {
+  transform: translateY(-5px);
+}
+
+.tech-item:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/* ===== Seção Sobre ===== */
+.about-section {
+  background-color: var(--texto-claro);
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.829);
+}
+
+/* ===== Seção de Projetos ===== */
+.project-card {
   border: none;
   border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.295);
+  transition: var(--transicao);
+  margin-bottom: 30px;
 }
 
-.card:hover {
+.project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.card-img-top {
-  height: 200px;
-  object-fit: cover;
+/* ===== Seção de Contato ===== */
+.contact-form .form-control {
+  padding: 12px 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
-.card-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+.contact-form .form-control:focus {
+  box-shadow: none;
+  border-color: var(--cor-primaria);
 }
 
-.card-text {
-  font-size: 1rem;
-  color: #666;
-}
-
-/* Rodapé */
+/* ===== Rodapé ===== */
 footer {
-  background-color: #343a40;
-  color: white;
-  padding: 20px 0;
+  background-color: var(--fundo-escuro);
+  color: var(--texto-claro);
+  padding: 30px 0;
 }
 
-footer a {
-  color: #fff;
-  text-decoration: none;
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
 }
 
-footer a:hover {
-  color: #6c757d;
+.social-icons a {
+  color: var(--texto-claro);
+  font-size: 1.5rem;
+  transition: var(--transicao);
+}
+
+.social-icons a:hover {
+  color: var(--cor-primaria);
+  transform: translateY(-3px);
+}
+
+/* ===== Animações ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ===== Design Responsivo ===== */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  
+  .tech-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 0;
+  }
+  
+  .hero {
+    padding: 100px 0;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .tech-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 20px;
+  }
+  
+  .tech-item {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Classes Utilitárias ===== */
+.text-primary {
+  color: var(--cor-primaria) !important;
+}
+
+.bg-primary {
+  background-color: var(--cor-primaria) !important;
+}
+
+.btn-primary {
+  background-color: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: var(--cor-secundaria);
+  border-color: var(--cor-secundaria);
+}
+
+.section-title {
+  position: relative;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--cor-primaria);
+}
+
+/* Estilos para o efeito de vidro */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos para os badges */
+.bg-primary { background-color: #2962FF !important; }
+.bg-success { background-color: #00C853 !important; }
+.bg-warning { background-color: #FFD600 !important; }
+.bg-dark { background-color: #424242 !important; }
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .profile-img {
+      width: 180px;
+      height: 180px;
+      margin-bottom: 1.5rem;
+  }
+  
+  .tech-badge {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+  }
 }

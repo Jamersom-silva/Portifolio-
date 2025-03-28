@@ -4,37 +4,268 @@
     ViewData["Title"] = "Projetos";
 }
 
-<div class="container">
-    <h1>Meus Projetos</h1>
-    <p>Aqui estão alguns dos projetos que desenvolvi:</p>
+<style>
+    /* Estilos do fundo */
+    .background-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('/images/main.jpg') no-repeat center center;
+        background-size: cover;
+        z-index: -2;
+    }
 
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">Sistema de Gerenciamento de Tarefas</h5>
-            <p class="card-text">
-                Um sistema simples para gerenciar tarefas diárias, desenvolvido com python 
-            </p>
-            <a href="https://github.com/Jamersom-silva/organizador" target="_blank" class="btn btn-primary">Ver no GitHub</a>
-        </div>
-    </div>
+    /* Camada escura semi-transparente */
+    .dark-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.0.3);
+        z-index: -1;
+    }
 
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">Jogo 2D em Unity</h5>
-            <p class="card-text">
-                Um sistema que faz o controle de vendas do estoque de um loja, desenvolvi com ReactNative, Node.js, firebase
-            </p>
-            <a href="https://github.com/Jamersom-silva/Controle-de-vendas" target="_blank" class="btn btn-primary">Ver no GitHub</a>
-        </div>
-    </div>
+    .content-overlay {
+        position: relative;
+        min-height: 100vh;
+        padding: 80px 0;
+        color: white;
+        z-index: 1;
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; /* Fonte moderna */
+    }
 
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">Site de Portfólio</h5>
-            <p class="card-text">
-                Este site foi desenvolvido usando ASP.NET Core e Bootstrap para exibir meus projetos e habilidades.
-            </p>
-            <a href="https://github.com/seu-usuario/meu-portfolio" target="_blank" class="btn btn-primary">Ver no GitHub</a>
+    /* Container principal */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Tipografia aprimorada */
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: white;
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        line-height: 1.2;
+    }
+
+    .lead {
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+        color: rgba(255, 255, 255, 0.85);
+        text-align: center;
+        line-height: 1.6;
+        font-weight: 400;
+    }
+
+    /* Estilos dos cards */
+    .card {
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: white;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    .card-body {
+        padding: 1.5rem;
+    }
+
+    .card-title {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+        line-height: 1.3;
+    }
+
+    .card-text {
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.6;
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .card-footer {
+        background: transparent;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1rem 1.5rem;
+    }
+
+    /* Badges */
+    .badge {
+        font-size: 0.85em;
+        font-weight: 500;
+        padding: 0.4em 0.7em;
+        border-radius: 4px;
+        letter-spacing: 0.3px;
+    }
+
+    /* Botões */
+    .btn-outline-primary {
+        color: white;
+        border-color: rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+
+    .btn-outline-primary:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-color: white;
+    }
+
+   
+        
+        .card {
+            backdrop-filter: blur(5px);
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+        }
+    }
+</style>
+
+<!-- Fundo -->
+<div class="background-image"></div>
+
+<!-- Camada escura -->
+<div class="dark-overlay"></div>
+
+<!-- Conteúdo -->
+<div class="content-overlay">
+    <div class="container">
+        <h1>Meus Projetos</h1>
+        <p class="lead">Aqui estão alguns dos projetos que desenvolvi utilizando diversas tecnologias e frameworks</p>
+
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <!-- Organizador -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Organizador de Tarefas</h5>
+                        <p class="card-text">
+                            Sistema de gerenciamento de tarefas pessoais com interface CLI, desenvolvido em Python com armazenamento em banco de dados SQLite.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-2">Python 3</span>
+                            <span class="badge bg-secondary me-2">Click</span>
+                            <span class="badge bg-dark">SQLite</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="https://github.com/Jamersom-silva/organizador" target="_blank" class="btn btn-outline-primary">
+                            <i class="bi bi-github"></i> Ver no GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controle de Vendas -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Controle de Vendas</h5>
+                        <p class="card-text">
+                            Aplicativo mobile para gestão de vendas e estoque com sincronização em tempo real usando Firebase.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-info me-2">React Native</span>
+                            <span class="badge bg-success me-2">Node.js</span>
+                            <span class="badge bg-warning text-dark me-2">Firebase</span>
+                            <span class="badge bg-dark">Expo</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="https://github.com/Jamersom-silva/Controle-de-vendas" target="_blank" class="btn btn-outline-primary">
+                            <i class="bi bi-github"></i> Ver no GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JubsShop -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">JubsShop</h5>
+                        <p class="card-text">
+                            Plataforma de e-commerce fullstack com sistema de pagamentos integrado via Stripe e dashboard administrativo.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-primary me-2">React</span>
+                            <span class="badge bg-success me-2">Express.js</span>
+                            <span class="badge bg-danger me-2">MongoDB</span>
+                            <span class="badge bg-dark">Stripe API</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="https://github.com/Jamersom-silva/jubsShop" target="_blank" class="btn btn-outline-primary">
+                            <i class="bi bi-github"></i> Ver no GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SweetBaunilha -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">SweetBaunilha</h5>
+                        <p class="card-text">
+                            Sistema de cardápio digital para buffet com atualização em tempo real e pedidos online via WhatsApp.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-dark me-2">Django</span>
+                            <span class="badge bg-success me-2">Vue.js</span>
+                            <span class="badge bg-info me-2">PostgreSQL</span>
+                            <span class="badge bg-primary">Django REST</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="https://github.com/Jamersom-silva/SweetBaunilha" target="_blank" class="btn btn-outline-primary">
+                            <i class="bi bi-github"></i> Ver no GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfólio -->
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Portfólio Profissional</h5>
+                        <p class="card-text">
+                            Este site portfólio desenvolvido com tecnologias Microsoft para demonstração de habilidades em desenvolvimento web.
+                        </p>
+                        <div class="mt-3">
+                            <span class="badge bg-danger me-2">C#</span>
+                            <span class="badge bg-primary me-2">ASP.NET Core</span>
+                            <span class="badge bg-info text-dark me-2">Bootstrap 5</span>
+                            <span class="badge bg-secondary">Razor Pages</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="https://github.com/Jamersom-silva/Portifolio-" target="_blank" class="btn btn-outline-primary">
+                            <i class="bi bi-github"></i> Ver no GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

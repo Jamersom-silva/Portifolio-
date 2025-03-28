@@ -1,48 +1,83 @@
-/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
-a.navbar-brand[b-zee8pwljtg] {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+/* Estilos gerais */
+body[b-zee8pwljtg] {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-a[b-zee8pwljtg] {
-  color: #0077cc;
+/* Navbar personalizada */
+.navbar[b-zee8pwljtg] {
+  background-color: #212529 !important;
+  padding: 0.8rem 1rem;
 }
 
-.btn-primary[b-zee8pwljtg] {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.navbar-brand[b-zee8pwljtg] {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #4CAF50 !important;
 }
 
-.nav-pills .nav-link.active[b-zee8pwljtg], .nav-pills .show > .nav-link[b-zee8pwljtg] {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.nav-link[b-zee8pwljtg] {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
 }
 
-.border-top[b-zee8pwljtg] {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom[b-zee8pwljtg] {
-  border-bottom: 1px solid #e5e5e5;
+.nav-link:hover[b-zee8pwljtg] {
+  color: #4CAF50 !important;
+  transform: translateY(-2px);
 }
 
-.box-shadow[b-zee8pwljtg] {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+/* Container principal */
+.container[b-zee8pwljtg] {
+  flex: 1;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-button.accept-policy[b-zee8pwljtg] {
-  font-size: 1rem;
-  line-height: inherit;
-}
-
+/* Rodapé */
 .footer[b-zee8pwljtg] {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+  background-color: #212529;
+  color: white !important;
+  padding: 1.5rem 0;
+}
+
+.footer a[b-zee8pwljtg] {
+  color: #4CAF50;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer a:hover[b-zee8pwljtg] {
+  color: #3e8e41;
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar-brand[b-zee8pwljtg] {
+      font-size: 1.3rem;
+  }
+  
+  .nav-link[b-zee8pwljtg] {
+      padding: 0.5rem 0.75rem;
+  }
+  
+  .container[b-zee8pwljtg] {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+  }
+}
+
+/* Efeitos de transição para links */
+a[b-zee8pwljtg] {
+  transition: color 0.3s ease;
+}
+
+/* Estilo para ícones */
+.bi[b-zee8pwljtg] {
+  vertical-align: middle;
+  margin: 0 3px;
 }

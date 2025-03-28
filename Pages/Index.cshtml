@@ -1,51 +1,230 @@
 ﻿@page
 @model MeuPortfolio.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home";
+    ViewData["Title"] = "Home | Desenvolvedor Back-End";
 }
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="container">
-        <h1>Bem-vindo ao Meu Portfólio</h1>
-        <p>Desenvolvedor apaixonado por criar soluções inovadoras e eficientes.</p>
-        <a href="/Projetos" class="btn btn-light btn-lg">Ver Projetos</a>
-    </div>
-</section>
+<style>
+    /* Estilos do fundo */
+    .background-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('/images/main.jpg') no-repeat center center;
+        background-size: cover;
+        z-index: -2;
+    }
 
-<!-- Seção de Projetos -->
-<section class="container my-5">
-    <h2 class="text-center mb-5">Projetos Recentes</h2>
-    <div class="row">
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Projeto 1">
-                <div class="card-body">
-                    <h5 class="card-title">Projeto 1</h5>
-                    <p class="card-text">Descrição breve do projeto.</p>
-                    <a href="#" class="btn btn-primary">Ver Detalhes</a>
+    
+
+    .content-overlay {
+        position: relative;
+        min-height: 100vh;
+        padding: 80px 0;
+        color: rgba(255, 255, 255, 0);
+        z-index: 1;
+    }
+
+    /* Container principal */
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* Seção do perfil */
+    .profile-section {
+        background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border: 1px solid rgba(0, 0, 0, 0) 
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 4px solid #dbe6dc;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+
+    /* Seção de tecnologias */
+    .tech-section {
+        background-color: rgba(0, 0, 0, 0);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        padding: 2rem;
+        border: 1px solid rgba(0, 0, 0, 0);
+    }
+
+    .tech-title {
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+    }
+
+    .tech-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .tech-item {
+        transition: all 0.3s ease;
+    }
+
+    .tech-icon {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+        filter: grayscale(30%);
+        transition: all 0.3s ease;
+    }
+
+    .tech-item:hover .tech-icon {
+        filter: grayscale(0%);
+        transform: scale(1.15);
+    }
+
+    /* Estilos do texto */
+    .profile-text h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: white;
+    }
+    
+    .profile-text p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        color: white;
+    }
+    
+    .profile-text .lead {
+        font-size: 1.2rem;
+        color: #f8faf8;
+    }
+
+    /* Responsividade */
+    @@media (max-width: 768px) {
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 1rem;
+        }
+        
+        .tech-icon {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .profile-text h1 {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+</style>
+
+<!-- Fundo -->
+<div class="background-image"></div>
+
+<!-- Camada escura com 18.5% de opacidade -->
+<div class="dark-overlay"></div>
+
+<!-- Conteúdo -->
+<div class="content-overlay">
+    <div class="container">
+        <!-- Seção Perfil -->
+        <div class="profile-section">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="/images/img.jpg" class="profile-img" alt="Jamerson Silva">
+                </div>
+                <div class="col-md-8 profile-text">
+                    <h1>OLÁ, EU SOU <span style="color:rgb(229, 238, 229)">JAMERSOM SILVA</span></h1>
+                    <p class="lead">Desenvolvedor Back-End com 1 ano de experiência em projetos freelancer.</p>
+                    <p>
+                        Atualmente, estou envolvido em dois projetos desafiadores: soluções digitais para pequenos empreendedores 
+                        e um aplicativo mobile para controle de estoque. Sou apaixonado por criar tecnologias que resolvem 
+                        problemas reais e sempre busco aprender e acompanhar as tendências na área. Estou em busca do meu 
+                        primeiro emprego formal na tecnologia, onde posso aplicar meu conhecimento e continuar evoluindo 
+                        profissionalmente.
+                    </p>
                 </div>
             </div>
         </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Projeto 2">
-                <div class="card-body">
-                    <h5 class="card-title">Projeto 2</h5>
-                    <p class="card-text">Descrição breve do projeto.</p>
-                    <a href="#" class="btn btn-primary">Ver Detalhes</a>
+
+        <!-- Seção Tecnologias -->
+        <div class="tech-section">
+            <h2 class="tech-title">TECNOLOGIAS QUE UTILIZO</h2>
+            <div class="tech-container">
+                <!-- JavaScript -->
+                <div class="tech-item" title="JavaScript">
+                    <img src="/images/tech-icons/javascript-original.svg" class="tech-icon" alt="JavaScript">
                 </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card">
-                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Projeto 3">
-                <div class="card-body">
-                    <h5 class="card-title">Projeto 3</h5>
-                    <p class="card-text">Descrição breve do projeto.</p>
-                    <a href="#" class="btn btn-primary">Ver Detalhes</a>
+                <!-- Python -->
+                <div class="tech-item" title="Python">
+                    <img src="/images/tech-icons/python-original.svg" class="tech-icon" alt="Python">
+                </div>
+                <!-- C# -->
+                <div class="tech-item" title="C#">
+                    <img src="/images/tech-icons/csharp-plain.svg" class="tech-icon" alt="C#">
+                </div>
+                <!-- .NET Core -->
+                <div class="tech-item" title=".NET Core">
+                    <img src="/images/tech-icons/dotnetcore-original.svg" class="tech-icon" alt=".NET Core">
+                </div>
+                <!-- Django -->
+                <div class="tech-item" title="Django">
+                    <img src="/images/tech-icons/django-plain.svg" class="tech-icon" alt="Django">
+                </div>
+                <!-- PostgreSQL -->
+                <div class="tech-item" title="PostgreSQL">
+                    <img src="/images/tech-icons/postgresql-original-wordmark.svg" class="tech-icon" alt="PostgreSQL">
+                </div>
+                <!-- MongoDB -->
+                <div class="tech-item" title="MongoDB">
+                    <img src="/images/tech-icons/mongodb-original-wordmark.svg" class="tech-icon" alt="MongoDB">
+                </div>
+                <!-- AWS -->
+                <div class="tech-item" title="AWS">
+                    <img src="/images/tech-icons/amazonwebservices-original-wordmark.svg" class="tech-icon" alt="AWS">
+                </div>
+                <!-- Azure -->
+                <div class="tech-item" title="Azure">
+                    <img src="/images/tech-icons/azure-original-wordmark.svg" class="tech-icon" alt="Azure">
+                </div>
+                <!-- Docker -->
+                <div class="tech-item" title="Docker">
+                    <img src="/images/tech-icons/docker-original-wordmark.svg" class="tech-icon" alt="Docker">
+                </div>
+                <!-- Git -->
+                <div class="tech-item" title="Git">
+                    <img src="/images/tech-icons/git-original-wordmark.svg" class="tech-icon" alt="Git">
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
+
+<!-- Script para tooltips -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        tippy('.tech-item', {
+            content(reference) {
+                return reference.getAttribute('title');
+            },
+            placement: 'bottom',
+            theme: 'light'
+        });
+    });
+</script>
+
+<!-- Biblioteca para tooltips -->
+<link href="https://unpkg.com/tippy.js@6/dist/tippy.css" rel="stylesheet">
+<script src="https://unpkg.com/tippy.js@6/dist/tippy.umd.min.js"></script>
